@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '@/views/Home.vue'
+import store from '@/store'
+import Login from '@/views/Auth/Login.vue'
+import Register from '@/views/Auth/Register.vue'
+import Books from '@/views/Books.vue'
+import Quotes from '@/views/Quotes.vue'
 
 Vue.use(VueRouter)
 
@@ -8,15 +13,52 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    beforeEnter (to, from, next) {
+      store.getters.checkUser ? next() : next('/login')
+    },
+    meta: {
+      layout: 'main'
+    }
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/books',
+    name: 'Books',
+    component: Books,
+    beforeEnter (to, from, next) {
+      store.getters.checkUser ? next() : next('/login')
+    },
+    meta: {
+      layout: 'main'
+    }
+  },
+  {
+    path: '/quotes/:id',
+    name: 'quotes',
+    component: Quotes,
+    beforeEnter (to, from, next) {
+      store.getters.checkUser ? next() : next('/login')
+    },
+    props: true,
+    meta: {
+      layout: 'main'
+    }
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+    meta: {
+      layout: 'auth'
+    }
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register,
+    meta: {
+      layout: 'auth'
+    }
   }
 ]
 
