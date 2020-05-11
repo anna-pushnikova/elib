@@ -6,7 +6,6 @@ import store from './store'
 import Vuelidate from 'vuelidate'
 import Uimini from 'uimini/dist/css/uimini.css'
 import firebase from 'firebase'
-import { throwStatement } from 'babel-types'
 
 
 Vue.config.productionTip = false
@@ -18,13 +17,13 @@ Vue.use(
  
 // Firebase Initialize
 firebase.initializeApp({
-  apiKey: "AIzaSyDwqcmUbMRaJNYguGBscdLnJGCE_CsDeHM",
-  authDomain: "movie-lib-ecaf7.firebaseapp.com",
-  databaseURL: "https://movie-lib-ecaf7.firebaseio.com",
-  projectId: "movie-lib-ecaf7",
-  storageBucket: "movie-lib-ecaf7.appspot.com",
-  messagingSenderId: "78191783756",
-  appId: "1:78191783756:web:68ebf9073d8f84999429e9"
+  apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
+  authDomain: process.env.VUE_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.VUE_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.VUE_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.VUE_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.VUE_APP_FIREBASE_APP_ID
 })
 
 firebase.auth().onAuthStateChanged( user => {

@@ -4,9 +4,8 @@
       .container
         .auth
           .auth__banner
-            //- h1.ui-title-2 Hello Banner
             img(
-              src="@/assets/2853458.jpg"
+              src="@/assets/login.jpg"
             )
           .auth__form
             span.ui-title-2 Login
@@ -111,7 +110,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style lang="stylus">
-
 .auth 
   display flex
   align-items center

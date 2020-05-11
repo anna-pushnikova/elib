@@ -83,6 +83,9 @@ export default {
   .button-close
     width 20px
     height @width
+    &:before,
+    &:after
+      background-color #000
   .ui-label
     margin-right 8px
 // Header

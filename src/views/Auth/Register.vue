@@ -6,7 +6,7 @@
           .auth__banner
             //- h1.ui-title-1 Hello Banner
             img(
-              src="@/assets/495078-PHE69C-919.jpg"
+              src="@/assets/register.jpg"
             )
           .auth__form
             span.ui-title-2 Registration

@@ -33,13 +33,11 @@ export default {
     height @width
     display inline-block
     margin 0
-    transform: rotate(45deg)
+    transform rotate(45deg)
+    transition transform .5s ease-in-out
     &:before,
     &:after
       background-color: #fff
     &.active
-      transform: rotate(90deg)
-  .button-close 
-    &.active
-      transform rotate(90deg)
+      transform: rotate(315deg)
 </style>

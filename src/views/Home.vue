@@ -73,7 +73,7 @@
             ) Send
 
         img(
-          src="../assets/30796.jpg"
+          src="@/assets/home.png"
         )
 </template>
 
@@ -218,29 +218,23 @@ export default {
   margin-bottom 10px
   &:last-child
     margin-right 0
+
 .ui-tag
   .button-close
     width 20px
     height @width
+    &:before,
+    &:after
+      background-color #000
     &.active
       transform: rotate(45deg)
   &.used
-    background-color: #444ce0
+    background-color #444ce0
     color #fff
     .button-close
       &:before,
       &:after
-        background-color: #fff
-  .button-close 
-    &.active
-      transform rotate(45deg)
-  &.used
-    background-color: #444ce0
-    color #fff
-    .button-close
-      &:before,
-      &:after
-        background-color: #fff
+        background-color #000
 
 .form-item 
   margin-bottom 20px
